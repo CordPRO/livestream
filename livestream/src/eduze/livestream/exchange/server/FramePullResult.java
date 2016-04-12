@@ -1,8 +1,5 @@
 package eduze.livestream.exchange.server;
 
-/**
- * Created by Madhawa on 12/04/2016.
- */
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -11,9 +8,8 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * Created by Fujitsu on 3/27/2016.
+ * A result set received from FrameBuffer.pullFrame method.
  */
-
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name="FramePullResult")
 public class FramePullResult{
@@ -28,24 +24,17 @@ public class FramePullResult{
     private int segmentIndex = 0;
 
     /**
-     * @return the bufferOverRun
+     * @return true if reader has lost some frames due to buffer overflow
      */
     public boolean isBufferOverRun() {
         return bufferOverRun;
     }
 
     /**
-     * @return the data
+     * @return data received from buffer. If no new data is available, returns null
      */
     public byte[][] getData() {
         return data;
-    }
-
-    /**
-     * @return the lastFrameId
-     */
-    public int getLastFrameId() {
-        return getNextFrameId();
     }
 
     /**

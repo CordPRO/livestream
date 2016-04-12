@@ -8,8 +8,8 @@
 package eduze.livestream.exchange.client;
 
 public interface FrameBuffer extends java.rmi.Remote {
-    public int pushFrame(byte[] arg0) throws java.rmi.RemoteException;
-    public int getSegmentID() throws java.rmi.RemoteException;
-    public eduze.livestream.exchange.client.FramePullResult pullFrames(int arg0, int arg1) throws java.rmi.RemoteException;
     public void startNewSegment() throws java.rmi.RemoteException;
+    public int pushFrame(byte[] arg0) throws java.rmi.RemoteException;
+    public eduze.livestream.exchange.client.FramePullResult pullFrames(int arg0, int arg1) throws java.rmi.RemoteException;
+    public int getSegmentID() throws java.rmi.RemoteException;
 }
