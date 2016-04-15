@@ -128,17 +128,22 @@ public class AudioReceiver extends AbstractReceiver {
                             segmentID = result.getSegmentIndex();
                             nextFrameIndex = result.getNextFrameId();
 
-                            //receive frames
-                            for(byte[] b : result.getData())
+                            byte[][] data = result.getData();
+                            if(data != null && data.length > 0)
                             {
-                                if(isPlayReceived())
+                                for(byte[] b : data)
                                 {
-                                    //push the received frames to line-out
-                                    sourceline.write(b,0,b.length);
+                                    if(isPlayReceived())
+                                    {
+                                        //push the received frames to line-out
+                                        sourceline.write(b,0,b.length);
+                                    }
+                                    System.out.println(String.valueOf(b.length) + " bytes sent to audio out.");
+                                    notifyAudioReceived(b); //notify listeners
                                 }
-                                System.out.println(String.valueOf(b.length) + " bytes sent to audio out.");
-                                notifyAudioReceived(b); //notify listeners
                             }
+                            //receive frames
+
 
 
                         } catch (RemoteException e) {
