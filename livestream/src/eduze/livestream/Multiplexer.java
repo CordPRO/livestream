@@ -147,7 +147,12 @@ public class Multiplexer {
                         {
                             //a switch is pending, implement  it
                             inputServiceLocator = new FrameBufferImplServiceLocator();
-                            inputBuffer = inputServiceLocator.getFrameBufferImplPort(getInputURL());
+                            if(getInputURL() != null && !("".equals(getInputURL())))
+                            {
+                                inputBuffer = inputServiceLocator.getFrameBufferImplPort(getInputURL());
+                            }
+                            else
+                                inputBuffer = null;
 
                             //reset state variables
                             segmentID = 0;
