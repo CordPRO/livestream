@@ -986,7 +986,7 @@
       <workItem from="1460449218022" duration="1873000" />
       <workItem from="1460451229751" duration="2111000" />
       <workItem from="1460706606399" duration="394000" />
-      <workItem from="1465911542685" duration="16761000" />
+      <workItem from="1465911542685" duration="16771000" />
     </task>
     <task id="LOCAL-00001" summary="Adding Unit Testing">
       <created>1465916296076</created>
@@ -1016,7 +1016,14 @@
       <option name="project" value="LOCAL" />
       <updated>1466011837596</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Test Coverage Done">
+      <created>1466018558380</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1466018558380</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1052,7 +1059,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21139000" />
+    <option name="totallyTimeSpent" value="21149000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
