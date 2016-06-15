@@ -2,16 +2,12 @@ import eduze.livestream.ScreenCapturer;
 import eduze.livestream.exchange.Connector;
 import eduze.livestream.exchange.client.FrameBuffer;
 import eduze.livestream.exchange.server.FrameBufferImpl;
-import eduze.livestream.exchange.server.FramePullResult;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import javax.swing.*;
 import javax.xml.ws.Endpoint;
-import java.awt.*;
-import java.lang.reflect.InvocationTargetException;
 import java.rmi.RemoteException;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
@@ -102,14 +98,14 @@ public class ScreenCapturerTest {
     public void testSetImageEncoderFormat() throws Exception {
         screenCapturer.stopCapture();
         screenCapturer.setImageEncoderFormat("BMP");
-        testRun("BMP Test");
+        testReception("BMP Test");
         screenCapturer.setImageEncoderFormat("JPG");
-        testRun("JPG Test");
+        testReception("JPG Test");
         screenCapturer.setImageEncoderFormat("PNG");
-        testRun("PNG Test");
+        testReception("PNG Test");
     }
 
-    public void testRun(String testName) throws RemoteException, InterruptedException {
+    public void testReception(String testName) throws RemoteException, InterruptedException {
         lock = new CountDownLatch(1);
         screenCapturer.startCapture();
         done = false;
