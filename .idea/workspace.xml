@@ -986,7 +986,7 @@
       <workItem from="1460449218022" duration="1873000" />
       <workItem from="1460451229751" duration="2111000" />
       <workItem from="1460706606399" duration="394000" />
-      <workItem from="1465911542685" duration="15549000" />
+      <workItem from="1465911542685" duration="16761000" />
     </task>
     <task id="LOCAL-00001" summary="Adding Unit Testing">
       <created>1465916296076</created>
@@ -1009,7 +1009,14 @@
       <option name="project" value="LOCAL" />
       <updated>1466011026096</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Test Coverage Done">
+      <created>1466011837596</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1466011837596</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1045,7 +1052,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19927000" />
+    <option name="totallyTimeSpent" value="21139000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1095,7 +1102,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Adding Unit Testing" />
     <MESSAGE value="All Unit Tests done for livestream" />
-    <option name="LAST_COMMIT_MESSAGE" value="All Unit Tests done for livestream" />
+    <MESSAGE value="Test Coverage Done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test Coverage Done" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1367,7 +1375,7 @@
         <state relative-caret-position="319">
           <caret line="19" column="88" selection-start-line="18" selection-start-column="3" selection-end-line="19" selection-end-column="88" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1393,8 +1401,8 @@
         <state relative-caret-position="197">
           <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
           <folding>
-            <element signature="e#5754#5755#0" expanded="true" />
-            <element signature="e#5808#5809#0" expanded="true" />
+            <element signature="e#5754#5755#0" expanded="false" />
+            <element signature="e#5808#5809#0" expanded="false" />
           </folding>
         </state>
       </provider>
