@@ -1,6 +1,7 @@
 package eduze.livestream.exchange.server;
 
 import javax.jws.WebMethod;
+import javax.jws.WebParam;
 import javax.jws.WebService;
 
 /**
@@ -14,7 +15,7 @@ public interface FrameBuffer {
      * @return Index of next frame to be in next pushFrame
      */
     @WebMethod
-    public int pushFrame(byte[] frame);
+    public int pushFrame(@WebParam(name = "frame") byte[] frame);
 
     /**
      * Reads previously un-read byte-arrays (frames) in buffer by the calling user
@@ -24,7 +25,7 @@ public interface FrameBuffer {
      * @return FramePullResult that contains previously un-read frames in buffer by the calling user
      */
     @WebMethod
-    public FramePullResult pullFrames(int segmentID, int startFrameId);
+    public FramePullResult pullFrames(@WebParam(name = "segmentID") int segmentID, @WebParam(name="startFrameId") int startFrameId);
 
     /**
      * Used by writer to indicate that frames pushed from here on belongs to a new file. The readers will not receive frames that belong to previous file when they call pullframe.

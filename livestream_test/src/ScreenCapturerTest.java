@@ -38,6 +38,7 @@ public class ScreenCapturerTest {
 
     @AfterMethod
     public void tearDown() throws Exception {
+        Thread.currentThread().sleep(200);
         if(screenCapturer.isCapturing())
             screenCapturer.stopCapture();
         endpoint.stop();

@@ -95,7 +95,7 @@ public class AudioReceiver extends AbstractReceiver {
     }
 
     /**
-     * Start Receiving of audio frames from ReadBuffer
+     * start Receiving of audio frames from ReadBuffer
      */
     @Override
     public synchronized void startReceiving()

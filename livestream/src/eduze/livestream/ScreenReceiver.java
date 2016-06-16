@@ -45,7 +45,7 @@ public class ScreenReceiver extends AbstractReceiver {
     }
 
     /**
-     * Stop listening to readBuffer for screen captures
+     * stop listening to readBuffer for screen captures
      */
     @Override
     public synchronized void stopReceiving()
@@ -54,7 +54,7 @@ public class ScreenReceiver extends AbstractReceiver {
     }
 
     /**
-     * Start receiving screen captures from read buffer
+     * start receiving screen captures from read buffer
      */
     @Override
     public synchronized void startReceiving()

@@ -44,7 +44,7 @@ public abstract class AbstractCapturer {
     public abstract void startCapture() throws RemoteException;
 
     /**
-     * Stop Capturing to writeBuffer.
+     * stop Capturing to writeBuffer.
      */
     public abstract void stopCapture();
 

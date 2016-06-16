@@ -130,7 +130,7 @@ public class ScreenCapturer extends AbstractCapturer {
     }
 
     /**
-     * Stop Screen Capturing
+     * stop Screen Capturing
      */
     @Override
     public synchronized void stopCapture()

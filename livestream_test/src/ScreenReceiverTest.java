@@ -28,9 +28,9 @@ public class ScreenReceiverTest {
     @BeforeMethod
     public void setUp() throws Exception {
         serverBuffer = new FrameBufferImpl(5);
-        endpoint = Endpoint.publish("http://localhost:8000/testScreen", serverBuffer);
+        endpoint = Endpoint.publish("http://localhost:4000/testScreen", serverBuffer);
 
-        clientBuffer = Connector.obtainFrameBuffer("http://localhost:8000/testScreen");
+        clientBuffer = Connector.obtainFrameBuffer("http://localhost:4000/testScreen");
 
         screenCapturer = new ScreenCapturer(clientBuffer,1000);
         screenCapturer.startCapture();
@@ -40,6 +40,7 @@ public class ScreenReceiverTest {
 
     @AfterMethod
     public void tearDown() throws Exception {
+        Thread.currentThread().sleep(200);
         screenCapturer.stopCapture();
         screenReceiver.stopReceiving();
         endpoint.stop();

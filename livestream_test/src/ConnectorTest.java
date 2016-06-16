@@ -17,24 +17,25 @@ public class ConnectorTest {
     @org.testng.annotations.BeforeMethod
     public void setUp() throws Exception {
         FrameBufferImpl testFrameBuffer = new FrameBufferImpl(5);
-        endpoint = Endpoint.publish("http://localhost:1024/testBuffer",testFrameBuffer);
+        endpoint = Endpoint.publish("http://localhost:3000/testBuffer",testFrameBuffer);
 
     }
 
     @org.testng.annotations.AfterMethod
     public void tearDown() throws Exception {
+        Thread.currentThread().sleep(200);
         endpoint.stop();
     }
 
     @org.testng.annotations.Test
     public void testObtainFrameBuffer() throws Exception {
-        FrameBuffer  frameBuffer = Connector.obtainFrameBuffer("http://localhost:1024/testBuffer");
+        FrameBuffer  frameBuffer = Connector.obtainFrameBuffer("http://localhost:3000/testBuffer");
         frameBuffer.startNewSegment();
     }
 
     @org.testng.annotations.Test
     public void testObtainFrameBuffer1() throws Exception {
-        FrameBuffer  frameBuffer = Connector.obtainFrameBuffer(new URL("http://localhost:1024/testBuffer"));
+        FrameBuffer  frameBuffer = Connector.obtainFrameBuffer(new URL("http://localhost:3000/testBuffer"));
         frameBuffer.startNewSegment();
     }
 

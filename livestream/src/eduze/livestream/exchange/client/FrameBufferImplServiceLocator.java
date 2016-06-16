@@ -22,7 +22,7 @@ public class FrameBufferImplServiceLocator extends org.apache.axis.client.Servic
     }
 
     // Use to get a proxy class for FrameBufferImplPort
-    private java.lang.String FrameBufferImplPort_address = "http://localhost:8000/audiorelay";
+    private java.lang.String FrameBufferImplPort_address = "http://localhost:1024/frameBuffer";
 
     public java.lang.String getFrameBufferImplPortAddress() {
         return FrameBufferImplPort_address;

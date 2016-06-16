@@ -101,9 +101,9 @@ public class Multiplexer {
     }
 
     /**
-     * Stop the Multiplexer. A multiplexer stops switching of Frames from Input to Output when its stopped.
+     * stop the Multiplexer. A multiplexer stops switching of Frames from Input to Output when its stopped.
      */
-    public synchronized void Stop()
+    public synchronized void stop()
     {
         setRunning(false);
     }
@@ -111,7 +111,7 @@ public class Multiplexer {
     /**
      * Starts the Multiplexer. A multiplexer starts directing frames from input to output when its started.
      */
-    public synchronized void Start()
+    public synchronized void start()
     {
         if(isRunning())
             return;
@@ -200,7 +200,7 @@ public class Multiplexer {
             }
         });
 
-        //Start worker thread
+        //start worker thread
         setRunning(true);
         thread.start();
     }

@@ -32,22 +32,24 @@ public class AudioReceiverTest {
     @BeforeMethod
     public void setUp() throws Exception {
         serverBuffer = new FrameBufferImpl(5);
-        endpoint = Endpoint.publish("http://localhost:8000/testScreen", serverBuffer);
+        endpoint = Endpoint.publish("http://localhost:9000/testScreen", serverBuffer);
 
-        clientBuffer = Connector.obtainFrameBuffer("http://localhost:8000/testScreen");
+        clientBuffer = Connector.obtainFrameBuffer("http://localhost:9000/testScreen");
 
         audioCapturer = new AudioCapturer(clientBuffer);
         audioCapturer.startCapture();
 
         audioReceiver = new AudioReceiver(clientBuffer);
+        Thread.currentThread().sleep(500);
     }
 
     @AfterMethod
     public void tearDown() throws Exception {
         audioCapturer.stopCapture();
         audioReceiver.stopReceiving();
+        Thread.currentThread().sleep(1000);
         endpoint.stop();
-        Thread.currentThread().sleep(2000);
+        Thread.currentThread().sleep(1000);
     }
 
     private boolean done = false;

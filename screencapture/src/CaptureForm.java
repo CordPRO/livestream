@@ -91,7 +91,7 @@ public class CaptureForm extends JFrame {
                     } catch (RemoteException e1) {
                         e1.printStackTrace();
                     }
-                    multi.Start();
+                    multi.start();
                 }
             }
         });

@@ -19,8 +19,6 @@ import java.util.Scanner;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
-import static org.testng.Assert.*;
-
 /**
  * Created by Admin on 6/15/2016.
  */
@@ -58,6 +56,7 @@ public class MultiplexerTest {
 
     @AfterMethod
     public void tearDown() throws Exception {
+        Thread.currentThread().sleep(200);
         outputEndpoint.stop();
         input1Endpoint.stop();
         input2Endpoint.stop();
@@ -128,32 +127,32 @@ public class MultiplexerTest {
 
     @Test
     public void testSetInputURL() throws Exception {
-        multiplexer.Start();
+        multiplexer.start();
         multiplexer.setInputURL(new URL("http://localhost:8000/input1"));
         writeToBuffer(inputBuffer1,"hello");
         Assert.assertEquals(testReception("test hello"),"hello");
         writeToBuffer(inputBuffer2,"bye");
         multiplexer.setInputURL(new URL("http://localhost:8000/input2"));
         Assert.assertEquals(testReception("test hello"),"bye");
-        multiplexer.Stop();
+        multiplexer.stop();
 
     }
 
     @Test
     public void testIsRunning() throws Exception {
-        multiplexer.Start();
+        multiplexer.start();
         Assert.assertTrue(multiplexer.isRunning());
-        multiplexer.Stop();
+        multiplexer.stop();
         Assert.assertFalse(multiplexer.isRunning());
     }
 
     @Test
     public void testStart() throws Exception {
         multiplexer.setInputURL(new URL("http://localhost:8000/input1"));
-        multiplexer.Start();
+        multiplexer.start();
         writeToBuffer(inputBuffer1,"hello");
         Assert.assertEquals(testReception("test hello"),"hello");
-        multiplexer.Stop();
+        multiplexer.stop();
     }
 
 }

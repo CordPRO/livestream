@@ -98,14 +98,14 @@ public class AudioCapturer extends AbstractCapturer {
             }
         });
 
-        //Start the capture thread
+        //start the capture thread
         keepCapturing = true;
         writeBuffer.startNewSegment(); //Indicate that a new segment has begun in FrameBuffer
         captureThread.start();
     }
 
     /**
-     * Stop Capturing of Audio
+     * stop Capturing of Audio
      */
     public synchronized void stopCapture()
     {

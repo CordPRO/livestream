@@ -130,6 +130,7 @@ public class FrameBufferImpl implements FrameBuffer {
 
     }
 
+
     /**
      * Used by writer to indicate that frames pushed from here on belongs to a new file. The readers will not receive frames that belong to previous file when they call pullframe.
      */

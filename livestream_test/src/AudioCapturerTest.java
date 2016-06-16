@@ -44,6 +44,7 @@ public class AudioCapturerTest {
 
     @AfterMethod
     public void tearDown() throws Exception {
+        Thread.currentThread().sleep(200);
         audioCapturer.stopCapture();
         endpoint.stop();
         Thread.currentThread().sleep(1000);

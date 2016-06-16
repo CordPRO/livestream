@@ -27,17 +27,18 @@ public class FrameBufferImplTest {
     @BeforeMethod
     public void setUp() throws Exception {
         FrameBufferImpl testFrameBuffer = new FrameBufferImpl(bufferSize);
-        endpoint = Endpoint.publish("http://localhost:1024/testBuffer",testFrameBuffer);
+        endpoint = Endpoint.publish("http://localhost:2000/testBuffer",testFrameBuffer);
     }
 
     @AfterMethod
     public void tearDown() throws Exception {
+        Thread.currentThread().sleep(200);
         endpoint.stop();
     }
 
     @Test
     public void testPushFrame() throws Exception {
-        FrameBuffer frameBuffer = Connector.obtainFrameBuffer("http://localhost:1024/testBuffer");
+        FrameBuffer frameBuffer = Connector.obtainFrameBuffer("http://localhost:2000/testBuffer");
 
         for(int i = 0; i < 20; i++)
         {
@@ -52,7 +53,7 @@ public class FrameBufferImplTest {
 
     @Test
     public void testPullFrames() throws Exception {
-        FrameBuffer frameBuffer = Connector.obtainFrameBuffer("http://localhost:1024/testBuffer");
+        FrameBuffer frameBuffer = Connector.obtainFrameBuffer("http://localhost:2000/testBuffer");
         frameBuffer.startNewSegment();
 
         HashMap<String,Boolean> stringMap = new HashMap<>();
@@ -94,7 +95,7 @@ public class FrameBufferImplTest {
     //Only the items in new segment should be received
     @Test
     public void testStartNewSegment() throws Exception {
-        FrameBuffer frameBuffer = Connector.obtainFrameBuffer("http://localhost:1024/testBuffer");
+        FrameBuffer frameBuffer = Connector.obtainFrameBuffer("http://localhost:2000/testBuffer");
         frameBuffer.startNewSegment();
 
         for(int i = 0; i < addCount; i++)
@@ -150,7 +151,7 @@ public class FrameBufferImplTest {
 
     @Test
     public void testGetSegmentID() throws Exception {
-        FrameBuffer frameBuffer = Connector.obtainFrameBuffer("http://localhost:1024/testBuffer");
+        FrameBuffer frameBuffer = Connector.obtainFrameBuffer("http://localhost:2000/testBuffer");
         Assert.assertEquals(frameBuffer.getSegmentID(),0);
         frameBuffer.startNewSegment();
         Assert.assertEquals(frameBuffer.getSegmentID(),1);
